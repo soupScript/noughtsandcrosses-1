@@ -18,21 +18,25 @@ public class Main {
     boolean gamefinished = false;
     while (gamefinished == false){
       System.out.println(nacarr[0] + "|" + nacarr[1] + "|" + nacarr[2] + "\n" + nacarr[3] + "|" + nacarr[4] + "|" + nacarr[5] + "\n" + nacarr[6] + "|" + nacarr[7] + "|" + nacarr[8]);
-
-      System.out.println("What is your move? (Answer 1-9");
-      String inpts = ginput.nextLine();
-      int inpti = Integer.parseInt(inpts);
-      if (nacarr[inpti - 1] == 0){
-          if (yturnb == true){
-            nacarr[inpti - 1] = 1;
-            yturnb = false;
-          }else{
-            nacarr[inpti - 1] = 2;
-            yturnb = true;
-          }
-      }else{
+      try{
+        System.out.println("What is your move? (Answer 1-9");
+        String inpts = ginput.nextLine();
+        int inpti = Integer.parseInt(inpts);
+        if (nacarr[inpti - 1] == 0){
+            if (yturnb == true){
+              nacarr[inpti - 1] = 1;
+              yturnb = false;
+            }else{
+              nacarr[inpti - 1] = 2;
+              yturnb = true;
+            }
+        }else{
+            System.out.println("Oops, that's not valid! Try again.");
+            continue;
+        }catch (Exception e){
           System.out.println("Oops, that's not valid! Try again.");
-          continue;
+            continue;
+      }
 
       }
       //horizontal
